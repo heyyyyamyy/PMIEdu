@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - PMI Edu</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Certification-specific styles */
+        
+        .hero-section {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .certifications-grid {
+            padding: 60px 0;
+        }
+        
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            height: 100%;
+        }
+        
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .cert-card:hover::before {
+            left: 100%;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 170, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 212, 170, 0.2);
+        }
+        
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00d4aa, #39ff14);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover .cert-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .cert-title {
+            color: #00d4aa;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .cert-provider {
+            color: #39ff14;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .cert-description {
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+        
+        .cert-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .cert-features li {
+            color: #b0b0b0;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .cert-features li i {
+            color: #00d4aa;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .enquire-btn {
+            background: linear-gradient(45deg, #00d4aa, #39ff14);
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .enquire-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 170, 0.3);
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .load-more-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .load-more-btn {
+            background: linear-gradient(45deg, #00d4aa, #39ff14);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .load-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 212, 170, 0.4);
+        }
+        
+        .load-more-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Footer styles are handled by main styles.css */
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cert-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">PMI</span><span class="brand-accent">Edu</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="certifications.html">Certifications</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cta-nav" href="contact.html">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title text-gradient" data-aos="fade-up">Professional Certifications</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Advance your career with industry-recognized certifications from leading organizations worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Certifications Grid -->
+    <section class="certifications-grid">
+        <div class="container">
+            <div class="row" id="certificationsContainer">
+                <!-- Certifications will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Load More Section -->
+    <section class="load-more-section">
+        <div class="container">
+            <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreCertifications()">
+                <i class="fas fa-plus me-2"></i>Load More Certifications
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">
+                            <span class="brand-text">PMI</span><span class="brand-accent">Edu</span>
+                        </h3>
+                        <p class="footer-description">
+                            Empowering professionals worldwide with globally recognized PMI certifications and expert training.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="certifications.html">Certifications</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Certifications</h4>
+                        <ul class="footer-menu">
+                            <li><a href="#">PMP® Certification</a></li>
+                            <li><a href="#">PMI-ACP® Agile</a></li>
+                            <li><a href="#">CAPM® Certification</a></li>
+                            <li><a href="#">PMI-RMP® Risk</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@pmiedu.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Global Training Center</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            © 2024 PMI Edu. All rights reserved. PMI, PMP, CAPM, PMI-ACP are registered marks of Project Management Institute, Inc.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="terms-of-service.html">Terms of Service</a>
+                            <a href="cookie-policy.html">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Certifications data
+        const certifications = [
+            {
+                title: "Project Management Professional (PMP)®",
+                provider: "Project Management Institute (PMI)",
+                icon: "fas fa-project-diagram",
+                description: "The gold standard in project management certification, demonstrating your competence to lead and direct projects.",
+                features: ["35 PDUs required", "4-year degree + 3 years PM experience", "Global recognition", "Salary increase potential"]
+            },
+            {
+                title: "Certified Associate in Project Management (CAPM)®",
+                provider: "Project Management Institute (PMI)",
+                icon: "fas fa-certificate",
+                description: "Entry-level certification for project practitioners looking to demonstrate their understanding of project management.",
+                features: ["23 hours of PM education", "No experience required", "Career foundation", "PMI credential"]
+            },
+            {
+                title: "PMI Agile Certified Practitioner (PMI-ACP)®",
+                provider: "Project Management Institute (PMI)",
+                icon: "fas fa-sync-alt",
+                description: "Validates your knowledge of agile principles and your skill with agile techniques.",
+                features: ["21 PDUs in agile practices", "12 months agile experience", "Multiple agile methodologies", "High demand skill"]
+            },
+            {
+                title: "PRINCE2® Foundation",
+                provider: "AXELOS",
+                icon: "fas fa-crown",
+                description: "Internationally recognized project management methodology widely used in government and private sectors.",
+                features: ["Process-based approach", "Scalable methodology", "Global standard", "Government preferred"]
+            },
+            {
+                title: "PRINCE2® Practitioner",
+                provider: "AXELOS",
+                icon: "fas fa-chess-king",
+                description: "Advanced PRINCE2 certification demonstrating ability to apply and tailor PRINCE2 in real project scenarios.",
+                features: ["Foundation prerequisite", "Practical application", "Tailoring guidance", "Advanced competency"]
+            },
+            {
+                title: "Certified ScrumMaster (CSM)",
+                provider: "Scrum Alliance",
+                icon: "fas fa-users-cog",
+                description: "Demonstrates your knowledge of Scrum framework and ability to act as a servant leader.",
+                features: ["16-hour training", "Scrum fundamentals", "Team facilitation", "Agile leadership"]
+            },
+            {
+                title: "Professional Scrum Master (PSM I)",
+                provider: "Scrum.org",
+                icon: "fas fa-medal",
+                description: "Validates your knowledge of the Scrum framework and ability to support Scrum teams.",
+                features: ["No prerequisites", "Online assessment", "Lifetime validity", "Industry recognized"]
+            },
+            {
+                title: "Certified Scrum Product Owner (CSPO)",
+                provider: "Scrum Alliance",
+                icon: "fas fa-bullseye",
+                description: "Focuses on providing students with an understanding of the role of Product Owner in Scrum.",
+                features: ["16-hour training", "Product ownership", "Stakeholder management", "Value maximization"]
+            },
+            {
+                title: "SAFe® Agilist (SA)",
+                provider: "Scaled Agile",
+                icon: "fas fa-expand-arrows-alt",
+                description: "Leading SAFe certification for those leading a Lean-Agile transformation.",
+                features: ["Enterprise agile", "Lean portfolio management", "Agile transformation", "Leadership focus"]
+            },
+            {
+                title: "Certified Kubernetes Administrator (CKA)",
+                provider: "Cloud Native Computing Foundation",
+                icon: "fas fa-dharmachakra",
+                description: "Demonstrates the skills, knowledge and competency to perform the responsibilities of Kubernetes administrators.",
+                features: ["Hands-on exam", "Container orchestration", "Cloud native", "High demand skill"]
+            },
+            {
+                title: "AWS Certified Solutions Architect",
+                provider: "Amazon Web Services",
+                icon: "fab fa-aws",
+                description: "Validates expertise in designing distributed systems and applications on the AWS platform.",
+                features: ["Cloud architecture", "AWS services", "Scalable solutions", "Industry leading"]
+            },
+            {
+                title: "Microsoft Azure Fundamentals (AZ-900)",
+                provider: "Microsoft",
+                icon: "fab fa-microsoft",
+                description: "Entry-level certification that validates foundational knowledge of cloud services and Microsoft Azure.",
+                features: ["Cloud fundamentals", "Azure services", "Entry level", "Career foundation"]
+            },
+            {
+                title: "Google Cloud Professional Cloud Architect",
+                provider: "Google Cloud",
+                icon: "fab fa-google",
+                description: "Validates ability to design, develop, and manage robust, secure, scalable, and dynamic solutions.",
+                features: ["GCP expertise", "Solution design", "Enterprise scale", "Professional level"]
+            },
+            {
+                title: "Certified Information Systems Security Professional (CISSP)",
+                provider: "(ISC)²",
+                icon: "fas fa-shield-alt",
+                description: "Advanced-level certification for IT professionals responsible for designing and managing cybersecurity programs.",
+                features: ["5 years experience", "8 security domains", "Global recognition", "Executive level"]
+            },
+            {
+                title: "Certified Ethical Hacker (CEH)",
+                provider: "EC-Council",
+                icon: "fas fa-user-secret",
+                description: "Validates skills in finding vulnerabilities and weaknesses in target systems using same tools as malicious hackers.",
+                features: ["Ethical hacking", "Penetration testing", "Security assessment", "Hands-on skills"]
+            },
+            {
+                title: "CompTIA Security+",
+                provider: "CompTIA",
+                icon: "fas fa-lock",
+                description: "Entry-level cybersecurity certification that validates baseline skills necessary to perform core security functions.",
+                features: ["Entry level", "DoD approved", "Vendor neutral", "Career foundation"]
+            },
+            {
+                title: "Certified Information Security Manager (CISM)",
+                provider: "ISACA",
+                icon: "fas fa-user-shield",
+                description: "Advanced certification for experienced information security managers and those with management responsibilities.",
+                features: ["5 years experience", "Management focus", "Strategic thinking", "Leadership role"]
+            },
+            {
+                title: "Certified in Risk and Information Systems Control (CRISC)",
+                provider: "ISACA",
+                icon: "fas fa-exclamation-triangle",
+                description: "Validates skills in identifying and managing IT risks and implementing information systems controls.",
+                features: ["Risk management", "IT governance", "Compliance", "Strategic focus"]
+            },
+            {
+                title: "ITIL® 4 Foundation",
+                provider: "AXELOS",
+                icon: "fas fa-cogs",
+                description: "Entry-level certification in IT service management, covering key concepts, principles, and terminology.",
+                features: ["Service management", "Digital transformation", "Best practices", "Global standard"]
+            },
+            {
+                title: "ITIL® 4 Managing Professional",
+                provider: "AXELOS",
+                icon: "fas fa-tools",
+                description: "Advanced ITIL certification focusing on running successful IT-enabled services, teams and workflows.",
+                features: ["Foundation prerequisite", "Practical skills", "Service management", "Professional level"]
+            },
+            {
+                title: "Six Sigma Green Belt",
+                provider: "ASQ/IASSC",
+                icon: "fas fa-chart-line",
+                description: "Validates understanding of Six Sigma methodology and ability to participate in improvement projects.",
+                features: ["Process improvement", "Data analysis", "Quality management", "Project participation"]
+            },
+            {
+                title: "Six Sigma Black Belt",
+                provider: "ASQ/IASSC",
+                icon: "fas fa-trophy",
+                description: "Advanced Six Sigma certification for professionals leading complex improvement projects.",
+                features: ["Project leadership", "Advanced statistics", "Change management", "Mentoring skills"]
+            },
+            {
+                title: "Lean Six Sigma Master Black Belt",
+                provider: "ASQ/IASSC",
+                icon: "fas fa-star",
+                description: "Highest level Six Sigma certification for strategic leaders and organizational change agents.",
+                features: ["Strategic leadership", "Organizational change", "Mentoring", "Executive level"]
+            },
+            {
+                title: "Certified Business Analysis Professional (CBAP)®",
+                provider: "IIBA",
+                icon: "fas fa-chart-bar",
+                description: "Advanced certification for experienced business analysts with extensive business analysis experience.",
+                features: ["7500 hours experience", "BA expertise", "Requirements management", "Professional recognition"]
+            },
+            {
+                title: "Entry Certificate in Business Analysis (ECBA)™",
+                provider: "IIBA",
+                icon: "fas fa-clipboard-list",
+                description: "Entry-level certification for individuals looking to enter the business analysis profession.",
+                features: ["Entry level", "No experience required", "BA fundamentals", "Career foundation"]
+            },
+            {
+                title: "Certification of Capability in Business Analysis (CCBA)®",
+                provider: "IIBA",
+                icon: "fas fa-business-time",
+                description: "Mid-level certification for business analysts with some experience in the field.",
+                features: ["3750 hours experience", "Mid-level", "Professional development", "Career advancement"]
+            },
+            {
+                title: "Certified Data Management Professional (CDMP)",
+                provider: "DAMA International",
+                icon: "fas fa-database",
+                description: "Validates knowledge and experience in data management principles and best practices.",
+                features: ["Data governance", "Data quality", "Master data management", "Professional recognition"]
+            },
+            {
+                title: "Microsoft Certified: Data Analyst Associate",
+                provider: "Microsoft",
+                icon: "fas fa-chart-pie",
+                description: "Validates skills in designing and building scalable data models, cleaning and transforming data.",
+                features: ["Power BI expertise", "Data visualization", "Business intelligence", "Microsoft ecosystem"]
+            },
+            {
+                title: "Tableau Desktop Specialist",
+                provider: "Tableau",
+                icon: "fas fa-chart-area",
+                description: "Entry-level certification that validates foundational skills in Tableau Desktop.",
+                features: ["Data visualization", "Dashboard creation", "Entry level", "Hands-on skills"]
+            },
+            {
+                title: "Certified Analytics Professional (CAP)",
+                provider: "INFORMS",
+                icon: "fas fa-calculator",
+                description: "Validates end-to-end understanding of the analytics process, from framing business problems to methodology selection.",
+                features: ["Analytics expertise", "Business problem solving", "Methodology selection", "Professional recognition"]
+            },
+            {
+                title: "Google Analytics Individual Qualification (IQ)",
+                provider: "Google",
+                icon: "fas fa-search",
+                description: "Demonstrates proficiency in Google Analytics and digital marketing measurement.",
+                features: ["Web analytics", "Digital marketing", "Free certification", "Google recognized"]
+            },
+            {
+                title: "Certified Digital Marketing Professional",
+                provider: "Digital Marketing Institute",
+                icon: "fas fa-bullhorn",
+                description: "Comprehensive certification covering all aspects of digital marketing strategy and execution.",
+                features: ["Digital strategy", "Multi-channel marketing", "Campaign management", "Industry recognized"]
+            },
+            {
+                title: "HubSpot Content Marketing Certification",
+                provider: "HubSpot Academy",
+                icon: "fas fa-pen-fancy",
+                description: "Validates skills in creating and promoting content that drives traffic, leads, and sales.",
+                features: ["Content strategy", "Content creation", "Free certification", "Practical skills"]
+            },
+            {
+                title: "Facebook Certified Marketing Science Professional",
+                provider: "Facebook Blueprint",
+                icon: "fab fa-facebook",
+                description: "Advanced certification demonstrating expertise in Facebook advertising and marketing measurement.",
+                features: ["Social media advertising", "Campaign optimization", "Measurement", "Platform expertise"]
+            },
+            {
+                title: "Salesforce Certified Administrator",
+                provider: "Salesforce",
+                icon: "fab fa-salesforce",
+                description: "Validates skills and knowledge needed to configure and maintain Salesforce implementations.",
+                features: ["CRM administration", "User management", "Workflow automation", "Platform expertise"]
+            },
+            {
+                title: "Certified Customer Success Manager",
+                provider: "SuccessHACKER",
+                icon: "fas fa-handshake",
+                description: "Validates expertise in customer success management, retention strategies, and growth initiatives.",
+                features: ["Customer retention", "Success metrics", "Relationship management", "Growth strategies"]
+            },
+            {
+                title: "Certified Professional in Human Resources (PHR)®",
+                provider: "HR Certification Institute",
+                icon: "fas fa-users",
+                description: "Validates mastery of technical and operational aspects of HR management.",
+                features: ["HR expertise", "Employment law", "Talent management", "Professional recognition"]
+            },
+            {
+                title: "Senior Professional in Human Resources (SPHR)®",
+                provider: "HR Certification Institute",
+                icon: "fas fa-user-tie",
+                description: "Advanced HR certification for senior-level professionals with strategic HR responsibilities.",
+                features: ["Strategic HR", "Senior level", "Leadership focus", "Executive recognition"]
+            },
+            {
+                title: "Certified Compensation Professional (CCP)",
+                provider: "WorldatWork",
+                icon: "fas fa-dollar-sign",
+                description: "Validates expertise in compensation philosophy, job analysis, market pricing, and pay structure design.",
+                features: ["Compensation design", "Market analysis", "Pay equity", "Specialized expertise"]
+            },
+            {
+                title: "Certified Benefits Professional (CBP)",
+                provider: "WorldatWork",
+                icon: "fas fa-heart",
+                description: "Demonstrates expertise in employee benefits program design, implementation, and administration.",
+                features: ["Benefits administration", "Program design", "Compliance", "Employee wellness"]
+            },
+            {
+                title: "Certified Public Accountant (CPA)",
+                provider: "AICPA",
+                icon: "fas fa-file-invoice-dollar",
+                description: "Professional certification for accountants demonstrating competency in accounting and business knowledge.",
+                features: ["Accounting expertise", "Financial reporting", "Audit skills", "Professional license"]
+            },
+            {
+                title: "Certified Management Accountant (CMA)",
+                provider: "IMA",
+                icon: "fas fa-calculator",
+                description: "Validates expertise in financial planning, analysis, control, decision support, and professional ethics.",
+                features: ["Management accounting", "Financial analysis", "Strategic planning", "Decision support"]
+            },
+            {
+                title: "Chartered Financial Analyst (CFA)®",
+                provider: "CFA Institute",
+                icon: "fas fa-chart-line",
+                description: "Global standard for measuring competence and integrity of financial analysts and portfolio managers.",
+                features: ["Investment analysis", "Portfolio management", "Ethical standards", "Global recognition"]
+            },
+            {
+                title: "Financial Risk Manager (FRM)®",
+                provider: "GARP",
+                icon: "fas fa-shield-alt",
+                description: "Leading certification for risk management professionals covering market, credit, and operational risk.",
+                features: ["Risk management", "Financial markets", "Regulatory compliance", "Professional recognition"]
+            },
+            {
+                title: "Certified Internal Auditor (CIA)®",
+                provider: "IIA",
+                icon: "fas fa-search-dollar",
+                description: "Globally recognized certification for internal audit professionals demonstrating competency and professionalism.",
+                features: ["Internal audit", "Risk assessment", "Governance", "Global standard"]
+            },
+            {
+                title: "Certified Information Systems Auditor (CISA)®",
+                provider: "ISACA",
+                icon: "fas fa-laptop-code",
+                description: "Validates expertise in auditing, controlling, and securing information systems.",
+                features: ["IT audit", "Information systems", "Risk assessment", "Compliance"]
+            },
+            {
+                title: "Certified Fraud Examiner (CFE)",
+                provider: "ACFE",
+                icon: "fas fa-eye",
+                description: "Premier anti-fraud credential that demonstrates expertise in fraud prevention, detection, and deterrence.",
+                features: ["Fraud examination", "Investigation skills", "Legal knowledge", "Professional ethics"]
+            },
+            {
+                title: "Project Management Professional in Construction (PMP-C)",
+                provider: "Construction Industry Institute",
+                icon: "fas fa-hard-hat",
+                description: "Specialized project management certification focused on construction industry best practices.",
+                features: ["Construction PM", "Industry specific", "Best practices", "Professional development"]
+            },
+            {
+                title: "Certified Construction Manager (CCM)",
+                provider: "CMAA",
+                icon: "fas fa-building",
+                description: "Validates comprehensive knowledge of construction management practices and principles.",
+                features: ["Construction management", "Project delivery", "Industry expertise", "Professional recognition"]
+            },
+            {
+                title: "LEED Accredited Professional (LEED AP)",
+                provider: "USGBC",
+                icon: "fas fa-leaf",
+                description: "Demonstrates expertise in green building practices and LEED rating system.",
+                features: ["Green building", "Sustainability", "Environmental design", "Industry leadership"]
+            },
+            {
+                title: "Certified Energy Manager (CEM)",
+                provider: "AEE",
+                icon: "fas fa-bolt",
+                description: "Validates expertise in energy management, efficiency, and conservation practices.",
+                features: ["Energy management", "Efficiency optimization", "Cost reduction", "Environmental impact"]
+            },
+            {
+                title: "Professional Engineer (PE)",
+                provider: "NCEES",
+                icon: "fas fa-drafting-compass",
+                description: "Professional license for engineers demonstrating competency to practice engineering independently.",
+                features: ["Professional license", "Engineering expertise", "Public safety", "Legal authority"]
+            },
+            {
+                title: "Certified Quality Engineer (CQE)",
+                provider: "ASQ",
+                icon: "fas fa-check-circle",
+                description: "Validates understanding of quality principles and ability to implement quality systems.",
+                features: ["Quality systems", "Process improvement", "Statistical analysis", "Professional recognition"]
+            },
+            {
+                title: "Certified Reliability Engineer (CRE)",
+                provider: "ASQ",
+                icon: "fas fa-cog",
+                description: "Demonstrates expertise in reliability engineering principles and practices.",
+                features: ["Reliability analysis", "System optimization", "Risk assessment", "Technical expertise"]
+            },
+            {
+                title: "Certified Software Quality Engineer (CSQE)",
+                provider: "ASQ",
+                icon: "fas fa-code",
+                description: "Validates knowledge of software quality development and implementation.",
+                features: ["Software quality", "Testing methodologies", "Quality assurance", "Development lifecycle"]
+            },
+            {
+                title: "Certified Supplier Quality Professional (CSQP)",
+                provider: "ASQ",
+                icon: "fas fa-truck",
+                description: "Demonstrates expertise in supplier quality management and supply chain quality.",
+                features: ["Supplier management", "Quality systems", "Supply chain", "Vendor assessment"]
+            },
+            {
+                title: "Certified Quality Improvement Associate (CQIA)",
+                provider: "ASQ",
+                icon: "fas fa-arrow-up",
+                description: "Entry-level certification in quality improvement principles and basic quality tools.",
+                features: ["Quality improvement", "Basic tools", "Entry level", "Process enhancement"]
+            },
+            {
+                title: "Certified Manager of Quality/Organizational Excellence (CMQ/OE)",
+                provider: "ASQ",
+                icon: "fas fa-award",
+                description: "Advanced certification for quality professionals in leadership and management roles.",
+                features: ["Quality leadership", "Organizational excellence", "Management systems", "Strategic planning"]
+            },
+            {
+                title: "Certified Calibration Technician (CCT)",
+                provider: "ASQ",
+                icon: "fas fa-ruler",
+                description: "Validates competency in calibration principles, procedures, and measurement systems.",
+                features: ["Calibration expertise", "Measurement systems", "Technical skills", "Quality assurance"]
+            },
+            {
+                title: "Certified Pharmaceutical GMP Professional (CPGP)",
+                provider: "ISPE",
+                icon: "fas fa-pills",
+                description: "Demonstrates expertise in pharmaceutical Good Manufacturing Practices and regulatory compliance.",
+                features: ["GMP compliance", "Pharmaceutical industry", "Regulatory knowledge", "Quality systems"]
+            },
+            {
+                title: "Certified Biomedical Equipment Technician (CBET)",
+                provider: "ICC",
+                icon: "fas fa-heartbeat",
+                description: "Validates competency in biomedical equipment maintenance, repair, and safety testing.",
+                features: ["Medical equipment", "Safety testing", "Maintenance procedures", "Healthcare technology"]
+            },
+            {
+                title: "Certified Clinical Engineer (CCE)",
+                provider: "ICC",
+                icon: "fas fa-stethoscope",
+                description: "Advanced certification for clinical engineers managing healthcare technology programs.",
+                features: ["Clinical engineering", "Healthcare technology", "Program management", "Patient safety"]
+            },
+            {
+                title: "Certified Radiology Equipment Specialist (CRES)",
+                provider: "ICC",
+                icon: "fas fa-x-ray",
+                description: "Specialized certification for professionals working with radiology and imaging equipment.",
+                features: ["Radiology equipment", "Imaging systems", "Specialized knowledge", "Healthcare focus"]
+            },
+            {
+                title: "Certified Laboratory Equipment Specialist (CLES)",
+                provider: "ICC",
+                icon: "fas fa-microscope",
+                description: "Validates expertise in laboratory equipment maintenance, calibration, and quality assurance.",
+                features: ["Laboratory equipment", "Calibration procedures", "Quality assurance", "Technical expertise"]
+            },
+            {
+                title: "Certified Healthcare Technology Manager (CHTM)",
+                provider: "ICC",
+                icon: "fas fa-hospital",
+                description: "Advanced certification for healthcare technology managers and department leaders.",
+                features: ["Technology management", "Healthcare leadership", "Strategic planning", "Department management"]
+            },
+            {
+                title: "Certified Professional in Healthcare Quality (CPHQ)",
+                provider: "NAHQ",
+                icon: "fas fa-user-md",
+                description: "Validates expertise in healthcare quality management, patient safety, and performance improvement.",
+                features: ["Healthcare quality", "Patient safety", "Performance improvement", "Regulatory compliance"]
+            },
+            {
+                title: "Certified Professional in Patient Safety (CPPS)",
+                provider: "NAHQ",
+                icon: "fas fa-shield-virus",
+                description: "Specialized certification focusing on patient safety principles, practices, and leadership.",
+                features: ["Patient safety", "Risk management", "Safety culture", "Healthcare improvement"]
+            },
+            {
+                title: "Certified Case Manager (CCM)",
+                provider: "CCMC",
+                icon: "fas fa-clipboard-check",
+                description: "Validates expertise in case management across healthcare and human services settings.",
+                features: ["Case management", "Care coordination", "Resource management", "Patient advocacy"]
+            },
+            {
+                title: "Certified Rehabilitation Counselor (CRC)",
+                provider: "CRCC",
+                icon: "fas fa-hands-helping",
+                description: "Professional certification for rehabilitation counselors working with individuals with disabilities.",
+                features: ["Rehabilitation counseling", "Disability services", "Vocational guidance", "Professional ethics"]
+            },
+            {
+                title: "Certified Disability Management Specialist (CDMS)",
+                provider: "CDMSC",
+                icon: "fas fa-wheelchair",
+                description: "Validates expertise in disability management, return-to-work programs, and case coordination.",
+                features: ["Disability management", "Return-to-work", "Case coordination", "Workplace accommodation"]
+            },
+            {
+                title: "Certified Life Care Planner (CLCP)",
+                provider: "IARP",
+                icon: "fas fa-calendar-alt",
+                description: "Specialized certification for professionals developing comprehensive life care plans.",
+                features: ["Life care planning", "Cost analysis", "Medical case management", "Long-term care"]
+            },
+            {
+                title: "Certified Vocational Evaluation Specialist (CVE)",
+                provider: "CCWAVES",
+                icon: "fas fa-briefcase",
+                description: "Validates expertise in vocational evaluation and career assessment for individuals with disabilities.",
+                features: ["Vocational evaluation", "Career assessment", "Disability services", "Employment planning"]
+            },
+            {
+                title: "Certified Return-to-Work Coordinator (CRTWC)",
+                provider: "NRTWA",
+                icon: "fas fa-undo",
+                description: "Specialized certification for professionals coordinating return-to-work programs and services.",
+                features: ["Return-to-work coordination", "Program management", "Stakeholder collaboration", "Outcome measurement"]
+            },
+            {
+                title: "Certified Workers' Compensation Professional (CWCP)",
+                provider: "NWCDC",
+                icon: "fas fa-hard-hat",
+                description: "Validates expertise in workers' compensation systems, claims management, and regulatory compliance.",
+                features: ["Workers' compensation", "Claims management", "Regulatory knowledge", "Risk assessment"]
+            },
+            {
+                title: "Certified Professional Ergonomist (CPE)",
+                provider: "BCPE",
+                icon: "fas fa-chair",
+                description: "Advanced certification for ergonomics professionals demonstrating expertise in human factors engineering.",
+                features: ["Ergonomics expertise", "Human factors", "Workplace design", "Injury prevention"]
+            },
+            {
+                title: "Associate Safety Professional (ASP)",
+                provider: "BCSP",
+                icon: "fas fa-exclamation-triangle",
+                description: "Entry-level safety certification for professionals beginning their safety career.",
+                features: ["Safety fundamentals", "Entry level", "Professional development", "Career foundation"]
+            },
+            {
+                title: "Certified Safety Professional (CSP)",
+                provider: "BCSP",
+                icon: "fas fa-helmet-safety",
+                description: "Advanced safety certification demonstrating expertise in safety management and leadership.",
+                features: ["Safety management", "Risk assessment", "Program development", "Professional recognition"]
+            },
+            {
+                title: "Certified Industrial Hygienist (CIH)",
+                provider: "ABIH",
+                icon: "fas fa-lungs",
+                description: "Professional certification for industrial hygienists specializing in occupational health and safety.",
+                features: ["Industrial hygiene", "Occupational health", "Exposure assessment", "Professional expertise"]
+            },
+            {
+                title: "Certified Occupational Health Nurse (COHN)",
+                provider: "ABOHN",
+                icon: "fas fa-user-nurse",
+                description: "Specialized nursing certification for occupational health and workplace safety.",
+                features: ["Occupational health nursing", "Workplace safety", "Employee health", "Nursing expertise"]
+            }
+        ];
+
+        let currentPage = 0;
+        const itemsPerPage = 10;
+        let displayedCertifications = 0;
+
+        function createCertificationCard(cert) {
+            return `
+                <div class="col-lg-6 col-xl-4 mb-4" data-aos="fade-up" data-aos-delay="${Math.random() * 200}">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="${cert.icon}"></i>
+                        </div>
+                        <h4 class="cert-title">${cert.title}</h4>
+                        <p class="cert-provider">${cert.provider}</p>
+                        <p class="cert-description">${cert.description}</p>
+                        <ul class="cert-features">
+                            ${cert.features.map(feature => `<li><i class="fas fa-check"></i>${feature}</li>`).join('')}
+                        </ul>
+                        <a href="contact.html?cert=${encodeURIComponent(cert.title)}" class="enquire-btn">
+                            <i class="fas fa-envelope me-2"></i>Enquire Now
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadMoreCertifications() {
+            const container = document.getElementById('certificationsContainer');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            
+            const startIndex = displayedCertifications;
+            const endIndex = Math.min(startIndex + itemsPerPage, certifications.length);
+            
+            for (let i = startIndex; i < endIndex; i++) {
+                container.innerHTML += createCertificationCard(certifications[i]);
+            }
+            
+            displayedCertifications = endIndex;
+            
+            // Re-initialize AOS for new elements
+            AOS.refresh();
+            
+            // Hide load more button if all certifications are displayed
+            if (displayedCertifications >= certifications.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        // Load initial certifications
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMoreCertifications();
+        });
+    </script>
+</body>
+</html>

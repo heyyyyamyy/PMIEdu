@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMI Edu - Professional PMI Certifications</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">PMI</span><span class="brand-accent">Edu</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certifications.html">Certifications</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cta-nav" href="contact.html">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-animation"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Empowering Future Leaders with 
+                            <span class="text-gradient">PMI-Certified Training</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Official Authorized Training Partner of PMI – Delivering Globally Recognized Certifications in Different Domains
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">48,478+</span>
+                                <span class="stat-label">Success Stories</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">Countries</span>
+                            </div>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="#certifications" class="btn btn-primary btn-glow me-3">Explore Certifications</a>
+                            <a href="#deals" class="btn btn-outline-light">View Deals</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="hero-visual">
+                        <div class="floating-elements">
+                            <div class="floating-shape shape-1"></div>
+                            <div class="floating-shape shape-2"></div>
+                            <div class="floating-shape shape-3"></div>
+                        </div>
+                        <div class="hero-image">
+                            <svg viewBox="0 0 400 300" class="hero-svg">
+                                <defs>
+                                    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#39ff14;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <polygon points="50,50 150,30 250,80 200,150 100,170" fill="url(#heroGradient)" opacity="0.8" class="poly-shape"/>
+                                <polygon points="200,100 300,90 350,180 280,220 180,200" fill="none" stroke="#ff1493" stroke-width="2" class="poly-outline"/>
+                                <circle cx="100" cy="100" r="5" fill="#00d4aa" class="floating-dot"/>
+                                <circle cx="300" cy="150" r="3" fill="#39ff14" class="floating-dot"/>
+                                <circle cx="250" cy="50" r="4" fill="#ffff00" class="floating-dot"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Highlights Carousel -->
+    <section class="carousel-section py-5">
+        <div class="container-fluid">
+            <div id="courseCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h3 class="carousel-title">PMP® Certification</h3>
+                                        <p class="carousel-text">Master project management with the world's most recognized certification</p>
+                                        <div class="offer-badge">Special Offer: 30% Off</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="carousel-visual">
+                                            <i class="fas fa-project-diagram carousel-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h3 class="carousel-title">PMI-ACP® Agile</h3>
+                                        <p class="carousel-text">Become an Agile expert with PMI's Agile Certified Practitioner program</p>
+                                        <div class="offer-badge">Limited Time: 25% Off</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="carousel-visual">
+                                            <i class="fas fa-sync-alt carousel-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h3 class="carousel-title">CAPM® Certification</h3>
+                                        <p class="carousel-text">Start your project management journey with CAPM certification</p>
+                                        <div class="offer-badge">Early Bird: 40% Off</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="carousel-visual">
+                                            <i class="fas fa-rocket carousel-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#courseCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#courseCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="about-content">
+                        <h2 class="section-title">About <span class="text-gradient">PMI Edu</span></h2>
+                        <p class="about-text">
+                            PMI Edu is a leading global provider of professional training and certification programs, 
+                            committed to equipping individuals and organizations with the skills and credentials needed 
+                            to thrive in today's fast-paced, competitive world.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="feature-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Experienced Educators</h4>
+                                    <p>Seasoned educators with wealth of knowledge and practical experience</p>
+                                </div>
+                            </div>
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="feature-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Globally Recognized</h4>
+                                    <p>Credentials respected and valued worldwide for career advancement</p>
+                                </div>
+                            </div>
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="feature-icon">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Virtual Learning</h4>
+                                    <p>Interactive online courses designed to fit your schedule</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="about-visual">
+                        <div class="stats-grid">
+                            <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="stat-number">48,478+</div>
+                                <div class="stat-label">Students Trained</div>
+                            </div>
+                            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="stat-number">20+</div>
+                                <div class="stat-label">Countries Served</div>
+                            </div>
+                            <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Certifications</div>
+                            </div>
+                            <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Our <span class="text-gradient">Certifications</span></h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Choose from our comprehensive range of globally recognized PMI certifications
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="cert-badge hot-deal">Hot Deal!</div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">PMP® Certification</h3>
+                            <p class="cert-description">Project Management Professional - The gold standard in project management</p>
+                            <div class="cert-price">
+                                <span class="original-price">$2,999</span>
+                                <span class="current-price">$2,099</span>
+                            </div>
+                            <ul class="cert-features">
+                                <li><i class="fas fa-check"></i> 35 PDUs included</li>
+                                <li><i class="fas fa-check"></i> Live virtual training</li>
+                                <li><i class="fas fa-check"></i> Exam prep materials</li>
+                            </ul>
+                            <button class="btn btn-cert-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="cert-badge limited-time">Limited Time!</div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">PMI-ACP® Agile</h3>
+                            <p class="cert-description">Agile Certified Practitioner - Master agile methodologies</p>
+                            <div class="cert-price">
+                                <span class="original-price">$2,499</span>
+                                <span class="current-price">$1,874</span>
+                            </div>
+                            <ul class="cert-features">
+                                <li><i class="fas fa-check"></i> 21 PDUs included</li>
+                                <li><i class="fas fa-check"></i> Agile frameworks</li>
+                                <li><i class="fas fa-check"></i> Scrum & Kanban</li>
+                            </ul>
+                            <button class="btn btn-cert-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="cert-badge early-bird">Early Bird!</div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">CAPM® Certification</h3>
+                            <p class="cert-description">Certified Associate in Project Management - Perfect for beginners</p>
+                            <div class="cert-price">
+                                <span class="original-price">$1,499</span>
+                                <span class="current-price">$899</span>
+                            </div>
+                            <ul class="cert-features">
+                                <li><i class="fas fa-check"></i> 23 hours training</li>
+                                <li><i class="fas fa-check"></i> Study materials</li>
+                                <li><i class="fas fa-check"></i> Practice exams</li>
+                            </ul>
+                            <button class="btn btn-cert-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">PMI-RMP® Risk</h3>
+                            <p class="cert-description">Risk Management Professional - Specialized risk management</p>
+                            <div class="cert-price">
+                                <span class="current-price">$2,299</span>
+                            </div>
+                            <ul class="cert-features">
+                                <li><i class="fas fa-check"></i> Risk assessment</li>
+                                <li><i class="fas fa-check"></i> Mitigation strategies</li>
+                                <li><i class="fas fa-check"></i> Expert guidance</li>
+                            </ul>
+                            <button class="btn btn-cert-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">PMI-SP® Scheduling</h3>
+                            <p class="cert-description">Scheduling Professional - Master project scheduling</p>
+                            <div class="cert-price">
+                                <span class="current-price">$2,199</span>
+                            </div>
+                            <ul class="cert-features">
+                                <li><i class="fas fa-check"></i> Schedule development</li>
+                                <li><i class="fas fa-check"></i> Resource planning</li>
+                                <li><i class="fas fa-check"></i> Timeline optimization</li>
+                            </ul>
+                            <button class="btn btn-cert-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">PMI-PBA® Business</h3>
+                            <p class="cert-description">Professional in Business Analysis - Bridge business and IT</p>
+                            <div class="cert-price">
+                                <span class="current-price">$2,399</span>
+                            </div>
+                            <ul class="cert-features">
+                                <li><i class="fas fa-check"></i> Requirements analysis</li>
+                                <li><i class="fas fa-check"></i> Stakeholder engagement</li>
+                                <li><i class="fas fa-check"></i> Solution evaluation</li>
+                            </ul>
+                            <button class="btn btn-cert-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section id="deals" class="deals-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Special <span class="text-gradient">Deals & Offers</span></h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Limited time offers on our most popular certification programs
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="deal-card mega-deal">
+                        <div class="deal-header">
+                            <div class="deal-badge">MEGA DEAL</div>
+                            <div class="deal-discount">50% OFF</div>
+                        </div>
+                        <div class="deal-content">
+                            <h3 class="deal-title">PMP® + PMI-ACP® Bundle</h3>
+                            <p class="deal-description">Get both certifications and save big with our exclusive bundle offer</p>
+                            <div class="deal-price">
+                                <span class="original-price">$5,498</span>
+                                <span class="deal-current-price">$2,749</span>
+                            </div>
+                            <div class="deal-features">
+                                <span class="feature-tag">✓ Two Certifications</span>
+                                <span class="feature-tag">✓ 56 PDUs Total</span>
+                                <span class="feature-tag">✓ Lifetime Access</span>
+                            </div>
+                            <div class="deal-timer">
+                                <span class="timer-label">Offer ends in:</span>
+                                <div class="timer-display">
+                                    <span class="timer-unit">05</span>:
+                                    <span class="timer-unit">23</span>:
+                                    <span class="timer-unit">47</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-deal-primary">Claim Deal Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4" data-aos="flip-right" data-aos-delay="200">
+                    <div class="deal-card flash-sale">
+                        <div class="deal-header">
+                            <div class="deal-badge">FLASH SALE</div>
+                            <div class="deal-discount">40% OFF</div>
+                        </div>
+                        <div class="deal-content">
+                            <h3 class="deal-title">CAPM® Fast Track</h3>
+                            <p class="deal-description">Start your PM career with our accelerated CAPM program</p>
+                            <div class="deal-price">
+                                <span class="original-price">$1,499</span>
+                                <span class="deal-current-price">$899</span>
+                            </div>
+                            <div class="deal-features">
+                                <span class="feature-tag">✓ 23 Hours Training</span>
+                                <span class="feature-tag">✓ Exam Simulator</span>
+                                <span class="feature-tag">✓ Mobile Learning</span>
+                            </div>
+                            <div class="deal-timer">
+                                <span class="timer-label">Limited spots:</span>
+                                <div class="spots-remaining">
+                                    <span class="spots-number">12</span> left
+                                </div>
+                            </div>
+                            <button class="btn btn-deal-primary">Enroll Today</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="mini-deal-card">
+                        <div class="mini-deal-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4 class="mini-deal-title">Free Retake</h4>
+                        <p class="mini-deal-text">Failed the exam? Retake for free with any certification program</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="mini-deal-card">
+                        <div class="mini-deal-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4 class="mini-deal-title">Flexible Schedule</h4>
+                        <p class="mini-deal-text">Learn at your own pace with 24/7 access to course materials</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="mini-deal-card">
+                        <div class="mini-deal-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="mini-deal-title">24/7 Support</h4>
+                        <p class="mini-deal-text">Get expert help whenever you need it with our dedicated support team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">
+                            <span class="brand-text">PMI</span><span class="brand-accent">Edu</span>
+                        </h3>
+                        <p class="footer-description">
+                            Empowering professionals worldwide with globally recognized PMI certifications and expert training.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-menu">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#certifications">Certifications</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Certifications</h4>
+                        <ul class="footer-menu">
+                            <li><a href="#">PMP® Certification</a></li>
+                            <li><a href="#">PMI-ACP® Agile</a></li>
+                            <li><a href="#">CAPM® Certification</a></li>
+                            <li><a href="#">PMI-RMP® Risk</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@pmiedu.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Global Training Center</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            © 2024 PMI Edu. All rights reserved. PMI, PMP, CAPM, PMI-ACP are registered marks of Project Management Institute, Inc.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="terms-of-service.html">Terms of Service</a>
+                            <a href="cookie-policy.html">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
