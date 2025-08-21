@@ -58,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(0, 212, 170, 0.2);
     transition: all 0.3s ease;
     padding: 1rem 0;
+    z-index: 1050;
 }
 
 .navbar-brand {
@@ -77,10 +78,34 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-toggler {
     border: none;
     padding: 0.25rem 0.5rem;
+    z-index: 1051;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2800, 212, 170, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 24px;
+    height: 24px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.navbar-toggler:hover {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid #00d4aa;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
+    outline: none;
+}
+
+.navbar-toggler:active {
+    background: rgba(0, 212, 170, 0.2);
 }
 
 .navbar-nav .nav-link {
@@ -1140,13 +1165,42 @@ h1, h2, h3, h4, h5, h6 {
     
     /* Navigation Mobile */
     .navbar-toggler {
-        border: 2px solid #00d4aa;
+        border: 2px solid #00d4aa !important;
         padding: 0.4rem 0.6rem;
+        z-index: 1051;
+        position: relative;
+        background: rgba(0, 0, 0, 0.9) !important;
+        border-radius: 6px;
+        width: auto;
+        height: auto;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navbar-toggler-icon {
+        width: 20px !important;
+        height: 20px !important;
+        background-size: 100% 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .navbar-toggler:focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
-    }
+    box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background: rgba(0, 212, 170, 0.1);
+    border-color: #39ff14;
+}
+
+.navbar-toggler:active {
+    background: rgba(0, 212, 170, 0.2);
+}
     
     .navbar-collapse {
         background: rgba(0, 0, 0, 0.95);
@@ -1329,6 +1383,241 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+/* Ultra Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 60px 0 40px;
+        min-height: auto;
+        overflow-x: hidden;
+    }
+    
+    .hero-section .row {
+        min-height: auto !important;
+    }
+    
+    .min-vh-100 {
+        min-height: auto !important;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        padding: 0 10px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+        padding: 0 10px;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+        padding: 0 10px;
+    }
+    
+    .stat-number {
+        font-size: 1.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .hero-buttons {
+        padding: 0 10px;
+        gap: 0.6rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 25px;
+    }
+    
+    .hero-visual {
+        height: 150px;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-svg {
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+    
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+        max-width: 100%;
+    }
+    
+    .hero-content {
+        padding: 10px 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-buttons .btn {
+        margin: 0.3rem;
+        white-space: nowrap;
+        min-width: 140px;
+    }
+    
+    .hero-buttons .me-3 {
+        margin-right: 0.3rem !important;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-toggler {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+        border: 2px solid #00d4aa !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        min-width: 40px;
+        min-height: 40px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navbar-toggler-icon {
+        width: 18px !important;
+        height: 18px !important;
+        background-size: 100% 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: inline-block !important;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        padding: 0 8px;
+    }
+    
+    /* Ensure no horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    
+    .col-lg-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    /* Certifications page specific */
+    .cert-card {
+        margin-bottom: 1.5rem;
+        padding: 15px;
+    }
+    
+    .cert-title {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .cert-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .cert-price {
+        font-size: 1.1rem;
+    }
+    
+    .pagination-container {
+        padding: 0 10px;
+    }
+    
+    .load-more-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Contact page specific */
+    .contact-info-card,
+    .contact-form-card {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-item {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-control {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .form-label {
+        font-size: 0.85rem;
+    }
+    
+    /* Footer adjustments */
+    .footer-section {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-title {
+        font-size: 1rem;
+    }
+    
+    .footer-menu a,
+    .contact-item {
+        font-size: 0.8rem;
+    }
+    
+    .copyright {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .footer-bottom-links a {
+        font-size: 0.75rem;
     }
 }
 
