@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - PMI Edu</title>
+    <link rel="icon" type="image/png" href="images/fevcom pmi.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -183,6 +184,17 @@
         .benefit-list {
             list-style: none;
             padding: 0;
+        }
+
+        /* Ensure no height constraints cause scrolling */
+        section {
+            min-height: auto !important;
+            height: auto !important;
+        }
+
+        .value-prop-card {
+            height: auto !important;
+            min-height: auto !important;
             margin: 0;
         }
 
@@ -313,6 +325,88 @@
             .timeline-dot {
                 left: 20px;
             }
+
+            /* Fix Why Choose Us section scrolling on mobile */
+            .value-prop-card {
+                height: auto !important;
+                min-height: auto !important;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .value-prop-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .value-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+
+            /* Ensure section doesn't have height constraints */
+            section {
+                min-height: auto !important;
+                height: auto !important;
+            }
+
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+        }
+        .team-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .team-card:hover::before { left: 100%; }
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 255, 255, 0.2);
+        }
+        .team-avatar {
+            width: 140px;
+            height: 140px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid rgba(0, 255, 255, 0.6);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.25);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .team-name {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+        .team-role {
+            color: #b0b0b0;
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -343,7 +437,7 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link cta-nav" href="contact.html">Get Started</a>
+                        <a class="nav-link cta-nav" href="https://exam.pmiindia.org/">Login</a>
                     </li>
                 </ul>
             </div>
@@ -441,7 +535,7 @@
 
     <!-- Why Choose Us Section -->
     <section class="py-5"
-        style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative; overflow: hidden;">
+        style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="display-4 fw-bold mb-4">Why Choose <span class="gradient-text">PMI Edu</span>?</h2>
@@ -451,7 +545,7 @@
             <div class="row g-4">
                 <!-- Expertise & Experience -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="value-prop-card h-100">
+                    <div class="value-prop-card">
                         <div class="value-icon">
                             <i class="fas fa-medal"></i>
                         </div>
@@ -469,7 +563,7 @@
 
                 <!-- Global Recognition -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="value-prop-card h-100">
+                    <div class="value-prop-card">
                         <div class="value-icon">
                             <i class="fas fa-globe-americas"></i>
                         </div>
@@ -487,7 +581,7 @@
 
                 <!-- Personalized Learning -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="value-prop-card h-100">
+                    <div class="value-prop-card">
                         <div class="value-icon">
                             <i class="fas fa-user-graduate"></i>
                         </div>
@@ -505,7 +599,7 @@
 
                 <!-- Success Rate -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="value-prop-card h-100">
+                    <div class="value-prop-card">
                         <div class="value-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -523,7 +617,7 @@
 
                 <!-- Ongoing Support -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="value-prop-card h-100">
+                    <div class="value-prop-card">
                         <div class="value-icon">
                             <i class="fas fa-headset"></i>
                         </div>
@@ -541,7 +635,7 @@
 
                 <!-- Innovation -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="value-prop-card h-100">
+                    <div class="value-prop-card">
                         <div class="value-icon">
                             <i class="fas fa-rocket"></i>
                         </div>
@@ -625,6 +719,45 @@
                             management methodologies.</p>
                     </div>
                     <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 fw-bold mb-4">Our Team Members</h2>
+                <p class="lead">Meet the leadership behind PMI Edu</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card h-100">
+                        <img class="team-avatar" src="images/ceo 1.jpg" alt="Team member portrait" loading="lazy">
+                        <h5 class="team-name">Rajaram</h5>
+                        <div class="team-role">Chief Financial Officer</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card h-100">
+                        <img class="team-avatar" src="images/ceo 2.jpg" alt="Team member portrait" loading="lazy">
+                        <h5 class="team-name">Ramprasad</h5>
+                        <div class="team-role">Chief Counselor</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card h-100">
+                        <img class="team-avatar" src="images/CEO 4.jpg" alt="Team member portrait" loading="lazy">
+                        <h5 class="team-name">Prat Willson</h5>
+                        <div class="team-role">Chief Technology Officer</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card h-100">
+                        <img class="team-avatar" src="images/katpan.jpg" alt="Team member portrait" loading="lazy">
+                        <h5 class="team-name">Akhilesh</h5>
+                        <div class="team-role">Account/Finance Manager</div>
+                    </div>
                 </div>
             </div>
         </div>
