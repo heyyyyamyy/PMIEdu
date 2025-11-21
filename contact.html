@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - PMI Edu</title>
     <link rel="icon" type="image/png" href="images/fevcom pmi.png">
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Contact-specific styles */
-        
+
         .contact-section .row {
             align-items: stretch;
         }
-        
+
         .contact-section .col-lg-4,
         .contact-section .col-lg-8 {
             display: flex;
             flex-direction: column;
         }
-        
+
         .hero-section {
             text-align: center;
             position: relative;
@@ -40,7 +43,7 @@
             padding: 120px 0 80px;
             background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 100%);
         }
-        
+
         .hero-content {
             z-index: 2;
             position: relative;
@@ -48,14 +51,14 @@
             width: 100%;
             box-sizing: border-box;
         }
-        
+
         .hero-title {
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
-        
+
         .hero-subtitle {
             font-size: 1.3rem;
             color: #cccccc;
@@ -65,11 +68,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .contact-section {
             padding: 60px 0;
         }
-        
+
         .contact-info-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(0, 212, 170, 0.2);
@@ -80,9 +83,10 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            height: 100%;
+            height: auto;
+            min-height: 560px;
         }
-        
+
         .contact-info-card::before {
             content: '';
             position: absolute;
@@ -93,17 +97,17 @@
             background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.1), transparent);
             transition: left 0.6s ease;
         }
-        
+
         .contact-info-card:hover::before {
             left: 100%;
         }
-        
+
         .contact-info-card:hover {
             transform: translateY(-10px);
             border-color: rgba(0, 212, 170, 0.5);
             box-shadow: 0 25px 50px rgba(0, 212, 170, 0.2);
         }
-        
+
         .contact-icon {
             width: 80px;
             height: 80px;
@@ -117,35 +121,35 @@
             margin-bottom: 25px;
             transition: all 0.3s ease;
         }
-        
+
         .contact-info-card:hover .contact-icon {
             transform: scale(1.1) rotate(5deg);
         }
-        
+
         .contact-info-card h4 {
             color: #00d4aa;
             font-weight: 700;
             margin-bottom: 20px;
             font-size: 1.4rem;
         }
-        
+
         .contact-info-card p {
             color: #e0e0e0;
             line-height: 1.6;
             margin-bottom: 15px;
             font-size: 1rem;
         }
-        
+
         .contact-info-card a {
             color: #00d4aa;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .contact-info-card a:hover {
             color: #39ff14;
         }
-        
+
         .contact-form-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(0, 212, 170, 0.2);
@@ -153,14 +157,15 @@
             padding: 40px;
             backdrop-filter: blur(10px);
         }
-        
+
         .form-label {
             color: #00d4aa;
             font-weight: 600;
             margin-bottom: 10px;
         }
-        
-        .form-control, .form-select {
+
+        .form-control,
+        .form-select {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(0, 212, 170, 0.3);
             border-radius: 10px;
@@ -168,23 +173,24 @@
             padding: 12px 15px;
             transition: all 0.3s ease;
         }
-        
-        .form-control:focus, .form-select:focus {
+
+        .form-control:focus,
+        .form-select:focus {
             background: rgba(255, 255, 255, 0.15);
             border-color: #00d4aa;
             box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
             color: #ffffff;
         }
-        
+
         .form-control::placeholder {
             color: #b0b0b0;
         }
-        
+
         .form-select option {
             background: #1a1a2e;
             color: #ffffff;
         }
-        
+
         .submit-btn {
             background: linear-gradient(135deg, #00d4aa, #39ff14);
             color: #000;
@@ -197,27 +203,27 @@
             cursor: pointer;
             width: 100%;
         }
-        
+
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(0, 212, 170, 0.4);
         }
-        
+
         .submit-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
         }
-        
+
         .invalid-feedback {
             color: #ff6b6b;
             font-size: 0.875rem;
             margin-top: 5px;
         }
-        
+
         .is-invalid {
             border-color: #ff6b6b !important;
         }
-        
+
         .success-message {
             background: rgba(40, 167, 69, 0.2);
             border: 1px solid rgba(40, 167, 69, 0.5);
@@ -227,7 +233,7 @@
             margin-bottom: 20px;
             display: none;
         }
-        
+
         .error-message {
             background: rgba(220, 53, 69, 0.2);
             border: 1px solid rgba(220, 53, 69, 0.5);
@@ -237,7 +243,7 @@
             margin-bottom: 20px;
             display: none;
         }
-        
+
         .office-hours {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
@@ -245,7 +251,7 @@
             margin-top: 20px;
             text-align: left;
         }
-        
+
         .office-hours h5 {
             color: #00d4aa;
             font-weight: 700;
@@ -254,24 +260,24 @@
             border-bottom: 1px solid rgba(0, 212, 170, 0.3);
             padding-bottom: 10px;
         }
-        
+
         .office-hours p {
             margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .office-hours p strong {
             min-width: 120px;
             text-align: left;
         }
-        
+
         .office-hours p {
             color: #e0e0e0;
             margin-bottom: 8px;
         }
-        
+
         .map-container {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(0, 212, 170, 0.2);
@@ -280,21 +286,21 @@
             text-align: center;
             margin-top: 30px;
         }
-        
+
         .map-placeholder {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
             padding: 60px 20px;
             color: #b0b0b0;
         }
-        
+
         /* Footer styles handled by styles.css */
-        
+
         @media (max-width: 768px) {
             .hero-section {
                 padding: 100px 0 60px;
             }
-            
+
             .hero-title {
                 font-size: 2rem;
                 line-height: 1.4;
@@ -303,24 +309,30 @@
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
-            
+
             .hero-subtitle {
                 font-size: 1rem;
                 margin-bottom: 2rem;
                 padding: 0 20px;
                 line-height: 1.6;
             }
-            
-            .contact-info-card, .contact-form-card {
+
+            .contact-info-card,
+            .contact-form-card {
                 margin-bottom: 20px;
             }
+
+            .contact-info-card {
+                min-height: 0;
+                height: auto;
+            }
         }
-        
+
         @media (max-width: 576px) {
             .hero-section {
                 padding: 80px 0 50px;
             }
-            
+
             .hero-title {
                 font-size: 1.6rem;
                 line-height: 1.5;
@@ -329,7 +341,7 @@
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
-            
+
             .hero-subtitle {
                 font-size: 0.9rem;
                 padding: 0 15px;
@@ -339,6 +351,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -400,59 +413,46 @@
                         </div>
                         <h4>Visit Our Office</h4>
                         <p><strong>PMI Edu Training Center</strong></p>
-                        <p>123 Business District<br>
-                        Tech City, TC 12345<br>
-                        United States</p>
+                        <p>105 WeWork, Oberoi Commerz II, Oberoi Garden City, Goregaon East, Mumbai 400063</p>
                         <div class="office-hours">
                             <h5>Office Hours</h5>
                             <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
                             <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
                             <p><strong>Sunday:</strong> Closed</p>
                         </div>
-                    </div>
-                    
-                    <div class="contact-info-card" data-aos="fade-right" data-aos-delay="100">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div class="office-hours">
+                            <h5>Contact</h5>
+                            <p><strong>Phone:</strong> <a href="tel:+918062491585">+91-8062491585</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info@pmiedu.com">info@pmiedu.com</a></p>
+                            <p><strong>Admissions:</strong> <a
+                                    href="mailto:admissions@pmiedu.com">admissions@pmiedu.com</a></p>
+                            <p><strong>Support:</strong> <a href="mailto:support@pmiedu.com">support@pmiedu.com</a></p>
                         </div>
-                        <h4>Call Us</h4>
-                        <p><strong>Main Office:</strong><br>
-                        <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-                        <p><strong>Toll Free:</strong><br>
-                        <a href="tel:+18001234567">+1 (800) 123-4567</a></p>
-                        <p><strong>International:</strong><br>
-                        <a href="tel:+15551234568">+1 (555) 123-4568</a></p>
-                    </div>
-                    
-                    <div class="contact-info-card" data-aos="fade-right" data-aos-delay="200">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                        <div class="office-hours">
+                            <h5>WhatsApp</h5>
+                            <p><a href="https://wa.me/918882671925">+91-8882671925</a></p>
+                            <p><a href="https://wa.me/918604873445">+91-8604873445</a></p>
                         </div>
-                        <h4>Email Us</h4>
-                        <p><strong>General Inquiries:</strong><br>
-                        <a href="mailto:info@pmiedu.com">info@pmiedu.com</a></p>
-                        <p><strong>Admissions:</strong><br>
-                        <a href="mailto:admissions@pmiedu.com">admissions@pmiedu.com</a></p>
-                        <p><strong>Support:</strong><br>
-                        <a href="mailto:support@pmiedu.com">support@pmiedu.com</a></p>
                     </div>
+
+
                 </div>
-                
+
                 <!-- Contact Form -->
                 <div class="col-lg-8">
                     <div class="contact-form-card" data-aos="fade-left">
                         <h3 class="mb-4" style="color: #00d4aa; font-weight: 700;">Send Us a Message</h3>
-                        
+
                         <div class="success-message" id="successMessage">
                             <i class="fas fa-check-circle me-2"></i>
                             Thank you for your message! We'll get back to you within 24 hours.
                         </div>
-                        
+
                         <div class="error-message" id="errorMessage">
                             <i class="fas fa-exclamation-circle me-2"></i>
                             Please correct the errors below and try again.
                         </div>
-                        
+
                         <form id="contactForm" novalidate>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -466,7 +466,7 @@
                                     <div class="invalid-feedback">Please provide your last name.</div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="email" class="form-label">Email Address *</label>
@@ -479,7 +479,7 @@
                                     <div class="invalid-feedback">Please provide your phone number.</div>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="certification" class="form-label">Certification of Interest</label>
                                 <select class="form-select" id="certification" name="certification">
@@ -497,11 +497,13 @@
                                     <option value="AWS-SA">AWS Certified Solutions Architect</option>
                                     <option value="Azure-900">Microsoft Azure Fundamentals (AZ-900)</option>
                                     <option value="GCP-Architect">Google Cloud Professional Cloud Architect</option>
-                                    <option value="CISSP">Certified Information Systems Security Professional (CISSP)</option>
+                                    <option value="CISSP">Certified Information Systems Security Professional (CISSP)
+                                    </option>
                                     <option value="CEH">Certified Ethical Hacker (CEH)</option>
                                     <option value="Security+">CompTIA Security+</option>
                                     <option value="CISM">Certified Information Security Manager (CISM)</option>
-                                    <option value="CRISC">Certified in Risk and Information Systems Control (CRISC)</option>
+                                    <option value="CRISC">Certified in Risk and Information Systems Control (CRISC)
+                                    </option>
                                     <option value="ITIL4-Foundation">ITIL® 4 Foundation</option>
                                     <option value="ITIL4-MP">ITIL® 4 Managing Professional</option>
                                     <option value="Six-Sigma-Green">Six Sigma Green Belt</option>
@@ -509,31 +511,35 @@
                                     <option value="Six-Sigma-Master">Lean Six Sigma Master Black Belt</option>
                                     <option value="CBAP">Certified Business Analysis Professional (CBAP)®</option>
                                     <option value="ECBA">Entry Certificate in Business Analysis (ECBA)™</option>
-                                    <option value="CCBA">Certification of Capability in Business Analysis (CCBA)®</option>
+                                    <option value="CCBA">Certification of Capability in Business Analysis (CCBA)®
+                                    </option>
                                     <option value="CDMP">Certified Data Management Professional (CDMP)</option>
                                     <option value="Other">Other (please specify in message)</option>
                                 </select>
                             </div>
-                            
+
                             <div class="mb-4">
                                 <label for="message" class="form-label">Message *</label>
-                                <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Tell us about your certification goals, timeline, and any specific questions you have..."></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="6" required
+                                    placeholder="Tell us about your certification goals, timeline, and any specific questions you have..."></textarea>
                                 <div class="invalid-feedback">Please provide your message.</div>
                             </div>
-                            
+
                             <button type="submit" class="submit-btn" id="submitBtn">
                                 <i class="fas fa-paper-plane me-2"></i>Send Message
                             </button>
                         </form>
                     </div>
-                    
+
                     <!-- Map Section -->
                     <div class="map-container" data-aos="fade-up" data-aos-delay="300">
                         <h4 style="color: #00d4aa; font-weight: 700; margin-bottom: 20px;">Find Us</h4>
                         <div class="map-placeholder">
-                            <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #00d4aa; margin-bottom: 15px;"></i>
-                            <p>Interactive map will be integrated here</p>
-                            <p><strong>123 Business District, Tech City, TC 12345</strong></p>
+                            <i class="fas fa-map-marked-alt"
+                                style="font-size: 3rem; color: #00d4aa; margin-bottom: 15px;"></i>
+                            <p></p>
+                            <p><strong>105 WeWork, Oberoi Commerz II, Oberoi Garden City, Goregaon East, Mumbai
+                                    400063</strong></p>
                         </div>
                     </div>
                 </div>
@@ -551,7 +557,8 @@
                             <span class="brand-text">PMI</span><span class="brand-accent">Edu</span>
                         </h3>
                         <p class="footer-description">
-                            Empowering professionals worldwide with globally recognized PMI certifications and expert training.
+                            Empowering professionals worldwide with globally recognized PMI certifications and expert
+                            training.
                         </p>
                         <div class="social-links">
                             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -588,11 +595,16 @@
                         <h4 class="footer-title">Contact Info</h4>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Business District<br>Tech City, TC 12345</span>
+                            <span>105 WeWork, Oberoi Commerz II<br>Oberoi Garden City, Goregaon East<br>Mumbai
+                                400063</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <span>+91-8062491585</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+91-8882671925, +91-8604873445</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -605,7 +617,8 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <p class="copyright">
-                            © 2024 PMI Edu. All rights reserved. PMI, PMP, CAPM, PMI-ACP are registered marks of Project Management Institute, Inc.
+                            © 2024 PMI Edu. All rights reserved. PMI, PMP, CAPM, PMI-ACP are registered marks of Project
+                            Management Institute, Inc.
                         </p>
                     </div>
                     <div class="col-md-6">
@@ -645,28 +658,28 @@
         }
 
         // Form validation and submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const form = this;
             const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
-            
+
             // Reset previous states
             form.classList.remove('was-validated');
             successMessage.style.display = 'none';
             errorMessage.style.display = 'none';
-            
+
             // Custom validation
             let isValid = true;
-            
+
             // Validate required fields
             const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'message'];
             requiredFields.forEach(fieldId => {
                 const field = document.getElementById(fieldId);
                 const value = field.value.trim();
-                
+
                 if (!value) {
                     field.classList.add('is-invalid');
                     isValid = false;
@@ -674,7 +687,7 @@
                     field.classList.remove('is-invalid');
                 }
             });
-            
+
             // Validate email format
             const email = document.getElementById('email');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -682,7 +695,7 @@
                 email.classList.add('is-invalid');
                 isValid = false;
             }
-            
+
             // Validate phone format (basic)
             const phone = document.getElementById('phone');
             const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{7,}$/;
@@ -690,45 +703,45 @@
                 phone.classList.add('is-invalid');
                 isValid = false;
             }
-            
+
             if (!isValid) {
                 errorMessage.style.display = 'block';
                 return;
             }
-            
+
             // Simulate form submission
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-            
+
             // Simulate API call delay
             setTimeout(() => {
                 // Reset form
                 form.reset();
-                
+
                 // Show success message
                 successMessage.style.display = 'block';
-                
+
                 // Reset button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
-                
+
                 // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 2000);
         });
-        
+
         // Real-time validation feedback
         const inputs = document.querySelectorAll('.form-control, .form-select');
         inputs.forEach(input => {
-            input.addEventListener('blur', function() {
+            input.addEventListener('blur', function () {
                 if (this.hasAttribute('required') && !this.value.trim()) {
                     this.classList.add('is-invalid');
                 } else {
                     this.classList.remove('is-invalid');
                 }
             });
-            
-            input.addEventListener('input', function() {
+
+            input.addEventListener('input', function () {
                 if (this.classList.contains('is-invalid') && this.value.trim()) {
                     this.classList.remove('is-invalid');
                 }
@@ -736,4 +749,5 @@
         });
     </script>
 </body>
+
 </html>
