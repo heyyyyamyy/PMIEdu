@@ -1,5 +1,5 @@
 // Initialize AOS (Animate On Scroll)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     AOS.init({
         duration: 1000,
         easing: 'ease-in-out',
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Navbar scroll effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(10, 10, 10, 0.98)';
@@ -71,21 +71,28 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Initialize counters when page loads
-window.addEventListener('load', function() {
-    // Hero section counters
-    const heroCounters = document.querySelectorAll('.stat-number');
+function calculateDailyIncrement(base, startDateISO, perDay) {
+    const start = new Date(startDateISO);
+    const now = new Date();
+    const startUTC = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+    const nowUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const days = Math.floor((nowUTC - startUTC) / (1000 * 60 * 60 * 24));
+    return base + Math.max(0, days) * perDay;
+}
+
+window.addEventListener('load', function () {
+    const dynamicSuccessCount = calculateDailyIncrement(48478, '2025-11-24', 10);
+    const heroCounters = document.querySelectorAll('#home .stat-item .stat-number');
     heroCounters.forEach((counter, index) => {
-        const values = [48478, 20]; // Corresponding to the displayed values
+        const values = [dynamicSuccessCount, 20];
         const suffixes = ['+', '+'];
         counter.dataset.target = values[index];
         counter.dataset.suffix = suffixes[index];
         counterObserver.observe(counter);
     });
-    
-    // About section counters
     const aboutCounters = document.querySelectorAll('.stat-card .stat-number');
     aboutCounters.forEach((counter, index) => {
-        const values = [48478, 20, 15, 98]; // Corresponding values
+        const values = [dynamicSuccessCount, 20, 15, 98];
         const suffixes = ['+', '+', '+', '%'];
         counter.dataset.target = values[index];
         counter.dataset.suffix = suffixes[index];
@@ -110,7 +117,7 @@ function enhanceFloatingShapes() {
 function createParticleSystem() {
     const heroSection = document.querySelector('.hero-section');
     if (!heroSection) return; // Exit if hero section doesn't exist
-    
+
     const particleContainer = document.createElement('div');
     particleContainer.className = 'particle-container';
     particleContainer.style.cssText = `
@@ -122,7 +129,7 @@ function createParticleSystem() {
         pointer-events: none;
         z-index: 1;
     `;
-    
+
     // Create particles
     for (let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
@@ -140,7 +147,7 @@ function createParticleSystem() {
         `;
         particleContainer.appendChild(particle);
     }
-    
+
     heroSection.appendChild(particleContainer);
 }
 
@@ -171,24 +178,24 @@ function addParticleStyles() {
 // Enhanced button hover effects
 function enhanceButtonEffects() {
     const buttons = document.querySelectorAll('.btn-glow, .btn-cert-primary, .btn-deal-primary');
-    
+
     buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
+        button.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-3px) scale(1.05)';
         });
-        
-        button.addEventListener('mouseleave', function() {
+
+        button.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
-        
+
         // Add click ripple effect
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
             const x = e.clientX - rect.left - size / 2;
             const y = e.clientY - rect.top - size / 2;
-            
+
             ripple.style.cssText = `
                 position: absolute;
                 width: ${size}px;
@@ -201,11 +208,11 @@ function enhanceButtonEffects() {
                 animation: ripple 0.6s linear;
                 pointer-events: none;
             `;
-            
+
             this.style.position = 'relative';
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
-            
+
             setTimeout(() => {
                 ripple.remove();
             }, 600);
@@ -231,30 +238,30 @@ function addRippleStyles() {
 function initializeCountdownTimer() {
     const timerDisplay = document.querySelector('.timer-display');
     if (!timerDisplay) return;
-    
+
     // Set countdown to 6 hours from now
     const countdownTime = new Date().getTime() + (6 * 60 * 60 * 1000);
-    
+
     function updateTimer() {
         const now = new Date().getTime();
         const distance = countdownTime - now;
-        
+
         if (distance < 0) {
             timerDisplay.innerHTML = '<span class="timer-unit">00</span>:<span class="timer-unit">00</span>:<span class="timer-unit">00</span>';
             return;
         }
-        
+
         const hours = Math.floor(distance / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
+
         timerDisplay.innerHTML = `
             <span class="timer-unit">${hours.toString().padStart(2, '0')}</span>:
             <span class="timer-unit">${minutes.toString().padStart(2, '0')}</span>:
             <span class="timer-unit">${seconds.toString().padStart(2, '0')}</span>
         `;
     }
-    
+
     updateTimer();
     setInterval(updateTimer, 1000);
 }
@@ -264,7 +271,7 @@ function initializeParallax() {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.hero-bg-animation, .floating-elements');
-        
+
         parallaxElements.forEach(element => {
             const speed = 0.5;
             element.style.transform = `translateY(${scrolled * speed}px)`;
@@ -275,13 +282,13 @@ function initializeParallax() {
 // Enhanced card hover effects
 function enhanceCardEffects() {
     const cards = document.querySelectorAll('.cert-card, .deal-card, .feature-item, .stat-card');
-    
+
     cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         });
-        
-        card.addEventListener('mousemove', function(e) {
+
+        card.addEventListener('mousemove', function (e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -289,11 +296,11 @@ function enhanceCardEffects() {
             const centerY = rect.height / 2;
             const rotateX = (y - centerY) / 10;
             const rotateY = (centerX - x) / 10;
-            
+
             this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
         });
     });
@@ -303,11 +310,11 @@ function enhanceCardEffects() {
 function initializeTypingAnimation() {
     const heroTitle = document.querySelector('.hero-title');
     if (!heroTitle) return;
-    
+
     const originalText = heroTitle.innerHTML;
     const textContent = heroTitle.textContent;
     heroTitle.innerHTML = '';
-    
+
     let i = 0;
     function typeWriter() {
         if (i < textContent.length) {
@@ -316,7 +323,7 @@ function initializeTypingAnimation() {
             setTimeout(typeWriter, 50);
         }
     }
-    
+
     // Start typing animation after a delay
     setTimeout(typeWriter, 1000);
 }
@@ -324,43 +331,43 @@ function initializeTypingAnimation() {
 // Magnetic effect for buttons
 function initializeMagneticEffect() {
     const magneticElements = document.querySelectorAll('.btn-primary, .btn-cert-primary, .btn-deal-primary');
-    
+
     magneticElements.forEach(element => {
-        element.addEventListener('mousemove', function(e) {
+        element.addEventListener('mousemove', function (e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
+
             this.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
         });
-        
-        element.addEventListener('mouseleave', function() {
+
+        element.addEventListener('mouseleave', function () {
             this.style.transform = 'translate(0px, 0px)';
         });
     });
 }
 
 // Initialize all enhancements when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Add custom styles
     addParticleStyles();
     addRippleStyles();
-    
+
     // Initialize features
     createParticleSystem();
     enhanceFloatingShapes();
     enhanceButtonEffects();
-    initializeCountdownTimer();
+    initializeSlotsCycle();
     initializeParallax();
     enhanceCardEffects();
     initializeMagneticEffect();
-    
+
     // Add loading animation to elements
     const animatedElements = document.querySelectorAll('.cert-card, .deal-card, .feature-item');
     animatedElements.forEach((element, index) => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
-        
+
         setTimeout(() => {
             element.style.transition = 'all 0.6s ease-out';
             element.style.opacity = '1';
@@ -370,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Carousel auto-play enhancement
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('#courseCarousel');
     if (carousel) {
         // Add custom indicators
@@ -385,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gap: 10px;
             z-index: 10;
         `;
-        
+
         const items = carousel.querySelectorAll('.carousel-item');
         items.forEach((item, index) => {
             const indicator = document.createElement('button');
@@ -398,19 +405,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursor: pointer;
                 transition: all 0.3s ease;
             `;
-            
+
             indicator.addEventListener('click', () => {
                 const bsCarousel = new bootstrap.Carousel(carousel);
                 bsCarousel.to(index);
             });
-            
+
             indicators.appendChild(indicator);
         });
-        
+
         carousel.appendChild(indicators);
-        
+
         // Update indicators on slide change
-        carousel.addEventListener('slide.bs.carousel', function(e) {
+        carousel.addEventListener('slide.bs.carousel', function (e) {
             const indicators = this.querySelectorAll('.carousel-indicators-custom button');
             indicators.forEach((indicator, index) => {
                 indicator.style.background = index === e.to ? '#00d4aa' : 'transparent';
@@ -444,7 +451,7 @@ function preloadResources() {
     const criticalResources = [
         'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap'
     ];
-    
+
     criticalResources.forEach(resource => {
         const link = document.createElement('link');
         link.rel = 'preload';
@@ -471,7 +478,7 @@ const lazyAnimationObserver = new IntersectionObserver((entries) => {
 });
 
 // Observe elements for lazy animation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const lazyElements = document.querySelectorAll('.cert-card, .deal-card, .mini-deal-card');
     lazyElements.forEach(element => {
         lazyAnimationObserver.observe(element);
@@ -497,6 +504,30 @@ lazyAnimationStyles.textContent = `
     }
 `;
 document.head.appendChild(lazyAnimationStyles);
+
+function initializeSlotsCycle() {
+    const containers = document.querySelectorAll('.spots-remaining');
+    if (!containers.length) return;
+
+    const start = new Date('2025-11-24');
+    const now = new Date();
+    const startUTC = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+    const nowUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const days = Math.max(0, Math.floor((nowUTC - startUTC) / (1000 * 60 * 60 * 24)));
+
+    containers.forEach((el) => {
+        const initialAttr = el.dataset.slotsStart || el.dataset.start;
+        const initial = parseInt(initialAttr || (el.querySelector('.spots-number') ? el.querySelector('.spots-number').textContent : '12'), 10);
+        let totalDecrease = 0;
+        for (let d = 0; d < days; d++) {
+            totalDecrease += d % 2 === 0 ? 2 : 3;
+        }
+        const remainder = totalDecrease % initial;
+        const left = initial - remainder || initial;
+        const numberEl = el.querySelector('.spots-number');
+        if (numberEl) numberEl.textContent = left;
+    });
+}
 
 // Console welcome message
 console.log('%c🚀 PMI Edu Website Loaded Successfully! 🚀', 'color: #00d4aa; font-size: 16px; font-weight: bold;');
