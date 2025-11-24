@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications - PMI Edu</title>
     <link rel="icon" type="image/png" href="images/fevcom pmi.png">
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Certification-specific styles */
-        
+
         .hero-section {
             padding: 120px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-title {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
-        
+
         .hero-subtitle {
             font-size: 1.3rem;
             color: #b0b0b0;
@@ -44,11 +47,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .certifications-grid {
             padding: 60px 0;
         }
-        
+
         .cert-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(0, 212, 170, 0.2);
@@ -61,7 +64,7 @@
             backdrop-filter: blur(10px);
             height: 100%;
         }
-        
+
         .cert-card::before {
             content: '';
             position: absolute;
@@ -72,17 +75,17 @@
             background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.1), transparent);
             transition: left 0.6s ease;
         }
-        
+
         .cert-card:hover::before {
             left: 100%;
         }
-        
+
         .cert-card:hover {
             transform: translateY(-10px);
             border-color: rgba(0, 212, 170, 0.5);
             box-shadow: 0 25px 50px rgba(0, 212, 170, 0.2);
         }
-        
+
         .cert-icon {
             width: 80px;
             height: 80px;
@@ -96,38 +99,38 @@
             margin-bottom: 25px;
             transition: all 0.3s ease;
         }
-        
+
         .cert-card:hover .cert-icon {
             transform: scale(1.1) rotate(5deg);
         }
-        
+
         .cert-title {
             color: #00d4aa;
             font-weight: 700;
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
-        
+
         .cert-provider {
             color: #39ff14;
             font-weight: 600;
             margin-bottom: 15px;
             font-size: 0.9rem;
         }
-        
+
         .cert-description {
             color: #e0e0e0;
             line-height: 1.6;
             margin-bottom: 25px;
             font-size: 0.95rem;
         }
-        
+
         .cert-features {
             list-style: none;
             padding: 0;
             margin-bottom: 25px;
         }
-        
+
         .cert-features li {
             color: #b0b0b0;
             margin-bottom: 8px;
@@ -135,13 +138,13 @@
             align-items: center;
             font-size: 0.9rem;
         }
-        
+
         .cert-features li i {
             color: #00d4aa;
             margin-right: 10px;
             font-size: 0.8rem;
         }
-        
+
         .enquire-btn {
             background: linear-gradient(45deg, #00d4aa, #39ff14);
             color: #000;
@@ -156,19 +159,19 @@
             width: 100%;
             text-align: center;
         }
-        
+
         .enquire-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 212, 170, 0.3);
             color: #000;
             text-decoration: none;
         }
-        
+
         .load-more-section {
             text-align: center;
             padding: 60px 0;
         }
-        
+
         .load-more-btn {
             background: linear-gradient(45deg, #00d4aa, #39ff14);
             color: #000;
@@ -180,38 +183,39 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .load-more-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0, 212, 170, 0.4);
         }
-        
+
         .load-more-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
         }
-        
+
         .hidden {
             display: none !important;
         }
-        
+
         /* Footer styles are handled by main styles.css */
-        
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-            
+
             .cert-card {
                 margin-bottom: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -238,7 +242,7 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link cta-nav" href="https://exam.pmiindia.org/">Login</a>
+                        <a class="nav-link cta-nav" href="https://exam.pmiedu.com/">Login</a>
                     </li>
                 </ul>
             </div>
@@ -284,7 +288,8 @@
                             <span class="brand-text">PMI</span><span class="brand-accent">Edu</span>
                         </h3>
                         <p class="footer-description">
-                            Empowering professionals worldwide with globally recognized PMI certifications and expert training.
+                            Empowering professionals worldwide with globally recognized PMI certifications and expert
+                            training.
                         </p>
                         <div class="social-links">
                             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -342,7 +347,8 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <p class="copyright">
-                            © 2024 PMI Edu. All rights reserved. PMI, PMP, CAPM, PMI-ACP are registered marks of Project Management Institute, Inc.
+                            © 2024 PMI Edu. All rights reserved. PMI, PMP, CAPM, PMI-ACP are registered marks of Project
+                            Management Institute, Inc.
                         </p>
                     </div>
                     <div class="col-md-6">
@@ -952,19 +958,19 @@
         function loadMoreCertifications() {
             const container = document.getElementById('certificationsContainer');
             const loadMoreBtn = document.getElementById('loadMoreBtn');
-            
+
             const startIndex = displayedCertifications;
             const endIndex = Math.min(startIndex + itemsPerPage, certifications.length);
-            
+
             for (let i = startIndex; i < endIndex; i++) {
                 container.innerHTML += createCertificationCard(certifications[i]);
             }
-            
+
             displayedCertifications = endIndex;
-            
+
             // Re-initialize AOS for new elements
             AOS.refresh();
-            
+
             // Hide load more button if all certifications are displayed
             if (displayedCertifications >= certifications.length) {
                 loadMoreBtn.style.display = 'none';
@@ -972,9 +978,10 @@
         }
 
         // Load initial certifications
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadMoreCertifications();
         });
     </script>
 </body>
+
 </html>
