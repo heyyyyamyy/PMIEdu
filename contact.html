@@ -191,6 +191,150 @@
             color: #ffffff;
         }
 
+        .form-select[multiple] {
+            min-height: 220px;
+        }
+
+        .form-select option:checked {
+            background: linear-gradient(135deg, #00d4aa, #39ff14);
+            color: #000;
+        }
+
+        .selected-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .selected-chips .chip {
+            background: rgba(0, 212, 170, 0.2);
+            border: 1px solid rgba(0, 212, 170, 0.5);
+            color: #00d4aa;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .selected-chips .chip .remove {
+            margin-left: 8px;
+            cursor: pointer;
+            color: #39ff14;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            left: -9999px !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+
+        .multi-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .multi-select .ms-field {
+            display: flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .multi-select .ms-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .multi-select .ms-placeholder {
+            color: #b0b0b0;
+        }
+
+        .multi-select .ms-caret {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #00d4aa;
+            margin-left: 8px;
+        }
+
+        .multi-select .chip {
+            background: rgba(0, 212, 170, 0.2);
+            border: 1px solid rgba(0, 212, 170, 0.5);
+            color: #00d4aa;
+            padding: 6px 10px;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        .multi-select .chip .remove {
+            margin-left: 6px;
+            color: #39ff14;
+            cursor: pointer;
+        }
+
+        .multi-select .ms-dropdown {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            margin-top: 6px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 212, 170, 0.2);
+            display: none;
+            z-index: 30;
+        }
+
+        .multi-select.open .ms-dropdown {
+            display: block;
+        }
+
+        .multi-select .ms-search {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-bottom: 1px solid rgba(0, 212, 170, 0.2);
+            color: #ffffff;
+            outline: none;
+        }
+
+        .multi-select .ms-options {
+            max-height: 240px;
+            overflow: auto;
+        }
+
+        .multi-select .ms-option {
+            padding: 10px 12px;
+            color: #e0e0e0;
+            cursor: pointer;
+        }
+
+        .multi-select .ms-option:hover {
+            background: rgba(0, 212, 170, 0.15);
+            color: #ffffff;
+        }
+
+        .multi-select .ms-option.selected {
+            background: linear-gradient(135deg, #00d4aa, #39ff14);
+            color: #000;
+        }
+
         .submit-btn {
             background: linear-gradient(135deg, #00d4aa, #39ff14);
             color: #000;
@@ -482,8 +626,9 @@
 
                             <div class="mb-3">
                                 <label for="certification" class="form-label">Certification of Interest</label>
-                                <select class="form-select" id="certification" name="certification">
-                                    <option value="">Select a certification (optional)</option>
+                                <select class="form-select visually-hidden" id="certification" name="certification"
+                                    multiple aria-label="Certification of Interest">
+                                    <option value="" disabled>Select a certification (optional)</option>
                                     <option value="PMP">Project Management Professional (PMP)®</option>
                                     <option value="CAPM">Certified Associate in Project Management (CAPM)®</option>
                                     <option value="PMI-ACP">PMI Agile Certified Practitioner (PMI-ACP)®</option>
@@ -514,8 +659,238 @@
                                     <option value="CCBA">Certification of Capability in Business Analysis (CCBA)®
                                     </option>
                                     <option value="CDMP">Certified Data Management Professional (CDMP)</option>
+                                    <option value="Administrative Manager">Administrative Manager</option>
+                                    <option value="Certified Administrative Professional">Certified Administrative
+                                        Professional</option>
+                                    <option value="Certified Cost Engineer">Certified Cost Engineer</option>
+                                    <option value="Certified Cost Estimator/Analyst">Certified Cost Estimator/Analyst
+                                    </option>
+                                    <option value="Certified Construction Industry Financial Professional">Certified
+                                        Construction Industry Financial Professional</option>
+                                    <option value="Certified Construction Manager">Certified Construction Manager
+                                    </option>
+                                    <option value="Certified Construction Professional">Certified Construction
+                                        Professional</option>
+                                    <option value="Certified Management Accountant">Certified Management Accountant
+                                    </option>
+                                    <option value="Certified Manager Certification">Certified Manager Certification
+                                    </option>
+                                    <option value="Certified Mechanical Engineer">Certified Mechanical Engineer</option>
+                                    <option value="Certified Piping Engineer">Certified Piping Engineer</option>
+                                    <option value="Certified Professional in Supply Management">Certified Professional
+                                        in Supply Management</option>
+                                    <option value="Certified Purchasing Professional">Certified Purchasing Professional
+                                    </option>
+                                    <option value="Certified Purchasing Manager">Certified Purchasing Manager</option>
+                                    <option value="Certified in Production and Inventory Management">Certified in
+                                        Production and Inventory Management</option>
+                                    <option value="Certified in Financial Management Certification">Certified in
+                                        Financial Management Certification</option>
+                                    <option value="Certified Quality Auditor">Certified Quality Auditor</option>
+                                    <option value="Certified Quality Engineer">Certified Quality Engineer</option>
+                                    <option value="Certified Site Supervisor">Certified Site Supervisor</option>
+                                    <option value="Certified Sales Executive">Certified Sales Executive</option>
+                                    <option value="Certified Safety Professional">Certified Safety Professional</option>
+                                    <option value="Certified Sales Professional">Certified Sales Professional</option>
+                                    <option value="Certified Supply Chain Professional">Certified Supply Chain
+                                        Professional</option>
+                                    <option value="Certified Survey Technician">Certified Survey Technician</option>
+                                    <option value="Certified Land Surveyor">Certified Land Surveyor</option>
+                                    <option value="Certified Estimating Professional">Certified Estimating Professional
+                                    </option>
+                                    <option value="Certified Electrical Engineer">Certified Electrical Engineer</option>
+                                    <option value="Construction Health and Safety Technician">Construction Health and
+                                        Safety Technician</option>
+                                    <option value="Certified Information Systems Auditor">Certified Information Systems
+                                        Auditor</option>
+                                    <option value="Certified Information Security Manager">Certified Information
+                                        Security Manager</option>
+                                    <option value="Facility Management Professional">Facility Management Professional
+                                    </option>
+                                    <option value="ITIL Foundation Certification">ITIL Foundation Certification</option>
+                                    <option value="Lean Six Sigma Green Belt">Lean Six Sigma Green Belt</option>
+                                    <option value="LEED AP Building Design + Construction">LEED AP Building Design +
+                                        Construction</option>
+                                    <option value="Master Project Manager">Master Project Manager</option>
+                                    <option value="Master Quality Manager">Master Quality Manager</option>
+                                    <option value="Maintenance Management Professional">Maintenance Management
+                                        Professional</option>
+                                    <option value="Microsoft Certified: Modern Desktop Administrator">Microsoft
+                                        Certified: Modern Desktop Administrator</option>
+                                    <option value="Professional Certified Marketer">Professional Certified Marketer
+                                    </option>
+                                    <option value="Professional Engineer – Electrical">Professional Engineer –
+                                        Electrical</option>
+                                    <option value="Professional Engineer – Mechanical">Professional Engineer –
+                                        Mechanical</option>
+                                    <option value="Program Management Professional">Program Management Professional
+                                    </option>
+                                    <option value="Project Management Professional">Project Management Professional
+                                    </option>
+                                    <option value="Quality Control Inspector Certification">Quality Control Inspector
+                                        Certification</option>
+                                    <option value="Scrum Master Certification">Scrum Master Certification</option>
+                                    <option value="Senior Professional in Human Resources">Senior Professional in Human
+                                        Resources</option>
+                                    <option value="Six Sigma Certification">Six Sigma Certification</option>
+                                    <option value="Welding Inspector Certification">Welding Inspector Certification
+                                    </option>
+                                    <option value="CompTIA A+">CompTIA A+</option>
+                                    <option value="Cisco Certified Network Associate">Cisco Certified Network Associate
+                                    </option>
+                                    <option value="Engineer in Training Certification">Engineer in Training
+                                        Certification</option>
+                                    <option value="OSHA Safety Certificate">OSHA Safety Certificate</option>
+                                    <option value="Certified Inventory Control Supervisor">Certified Inventory Control
+                                        Supervisor</option>
+                                    <option value="Certified Store Manager">Certified Store Manager</option>
+                                    <option value="Certified Professional Supervisor">Certified Professional Supervisor
+                                    </option>
+                                    <option value="Microsoft Project Professional Certification">Microsoft Project
+                                        Professional Certification</option>
+                                    <option value="Oracle Primavera P6 Professional Project Management Certification">
+                                        Oracle Primavera P6 Professional Project Management Certification</option>
+                                    <option value="International Accredited Business Accountant">International
+                                        Accredited Business Accountant</option>
+                                    <option value="Certified Resume Specialist: Accounting and Finance">Certified Resume
+                                        Specialist: Accounting and Finance</option>
+                                    <option value="Certified Logistics Associate">Certified Logistics Associate</option>
+                                    <option value="Microsoft Certified: Azure Developer Associate">Microsoft Certified:
+                                        Azure Developer Associate</option>
+                                    <option value="Oracle Certified Professional, Java SE Programmer">Oracle Certified
+                                        Professional, Java SE Programmer</option>
+                                    <option value="AWS Certified Developer – Associate">AWS Certified Developer –
+                                        Associate</option>
+                                    <option value="Google Associate Cloud Engineer">Google Associate Cloud Engineer
+                                    </option>
+                                    <option value="Drafter Certification">Drafter Certification</option>
+                                    <option value="AutoCAD Certified Professional">AutoCAD Certified Professional
+                                    </option>
+                                    <option value="Certified Design Drafter">Certified Design Drafter</option>
+                                    <option value="Certified Maintenance Technician">Certified Maintenance Technician
+                                    </option>
+                                    <option value="TOGAF">TOGAF</option>
+                                    <option value="Certified Information Systems Security Professional">Certified
+                                        Information Systems Security Professional</option>
+                                    <option value="Governance, Risk, and Compliance Professional Certification">
+                                        Governance, Risk, and Compliance Professional Certification</option>
+                                    <option value="Corporate Compliance &amp; Ethics Professional">Corporate Compliance
+                                        &amp; Ethics Professional</option>
+                                    <option value="ISO 37301 Lead Auditor">ISO 37301 Lead Auditor</option>
+                                    <option value="ISO 9001 Lead Auditor">ISO 9001 Lead Auditor</option>
+                                    <option value="Human Resources Business Professional">Human Resources Business
+                                        Professional</option>
+                                    <option value="Certified Calibration Technician">Certified Calibration Technician
+                                    </option>
+                                    <option value="ISO/IEC 17025 Internal Auditor Certification">ISO/IEC 17025 Internal
+                                        Auditor Certification</option>
+                                    <option value="Certified Piping Design Engineer">Certified Piping Design Engineer
+                                    </option>
+                                    <option value="SP3D Piping Design Certification">SP3D Piping Design Certification
+                                    </option>
+                                    <option value="Certified Logistics Professional">Certified Logistics Professional
+                                    </option>
+                                    <option value="DCS System Design &amp; Configuration Certification">DCS System
+                                        Design &amp; Configuration Certification</option>
+                                    <option value="Project Management for Control Systems Projects">Project Management
+                                        for Control Systems Projects</option>
+                                    <option value="Foreman Certification">Foreman Certification</option>
+                                    <option value="EPA Amusement Operators Safety Certification">EPA Amusement Operators
+                                        Safety Certification</option>
+                                    <option value="Occupational Health and Safety Technologist">Occupational Health and
+                                        Safety Technologist</option>
+                                    <option value="Industrial Safety Management Certification">Industrial Safety
+                                        Management Certification</option>
+                                    <option value="Certified Operations Manager">Certified Operations Manager</option>
+                                    <option value="Certified Service Manager">Certified Service Manager</option>
+                                    <option value="Certified Pipeline Integrity Engineer">Certified Pipeline Integrity
+                                        Engineer</option>
+                                    <option value="Certified Welding Inspector">Certified Welding Inspector</option>
+                                    <option value="Pipeline Risk Assessment &amp; Emergency Planning Certification">
+                                        Pipeline Risk Assessment &amp; Emergency Planning Certification</option>
+                                    <option value="Certified Maintenance &amp; Reliability Professional">Certified
+                                        Maintenance &amp; Reliability Professional</option>
+                                    <option value="Microsoft Office Specialist Master Certification">Microsoft Office
+                                        Specialist Master Certification</option>
+                                    <option value="Certified Document Consultant">Certified Document Consultant</option>
+                                    <option value="Safety Trained Supervisor">Safety Trained Supervisor</option>
+                                    <option value="Juniper Networks Certified Associate">Juniper Networks Certified
+                                        Associate</option>
+                                    <option value="CompTIA Network+">CompTIA Network+</option>
+                                    <option value="AWS Certified Advanced Networking – Specialty">AWS Certified Advanced
+                                        Networking – Specialty</option>
+                                    <option value="Chartered Credit Analyst">Chartered Credit Analyst</option>
+                                    <option value="Credit Risk Certification">Credit Risk Certification</option>
+                                    <option value="Certified Pricing Professional">Certified Pricing Professional
+                                    </option>
+                                    <option value="Certified Financial Modelling &amp; Valuation Analyst">Certified
+                                        Financial Modelling &amp; Valuation Analyst</option>
+                                    <option value="Certified Revenue Management Executive">Certified Revenue Management
+                                        Executive</option>
+                                    <option value="ITIL 4 Managing Professional">ITIL 4 Managing Professional</option>
+                                    <option value="Certified Agile Developer">Certified Agile Developer</option>
+                                    <option value="AutoCAD Civil 3D Certification">AutoCAD Civil 3D Certification
+                                    </option>
+                                    <option value="Certified Research Analyst">Certified Research Analyst</option>
+                                    <option value="Six Sigma Green Belt Certification">Six Sigma Green Belt
+                                        Certification</option>
+                                    <option value="Certified Software Quality Analyst">Certified Software Quality
+                                        Analyst</option>
+                                    <option value="ISTQB Advanced Level – Test Manager">ISTQB Advanced Level – Test
+                                        Manager</option>
+                                    <option value="Certified Bridge Inspector">Certified Bridge Inspector</option>
+                                    <option value="AutoCAD Civil 3D / BIM for Bridge Design Certification">AutoCAD Civil
+                                        3D / BIM for Bridge Design Certification</option>
+                                    <option value="Certified Technical Specialist">Certified Technical Specialist
+                                    </option>
+                                    <option value="Certified Customer Success Manager">Certified Customer Success
+                                        Manager</option>
+                                    <option value="Salesforce Certified Administrator">Salesforce Certified
+                                        Administrator</option>
+                                    <option value="Physical Security Professional">Physical Security Professional
+                                    </option>
+                                    <option value="Leadership and Strategic Management Certificate">Leadership and
+                                        Strategic Management Certificate</option>
+                                    <option value="ISO 37301 Lead Implementer">ISO 37301 Lead Implementer</option>
+                                    <option value="Certified Risk and Compliance Management Professional">Certified Risk
+                                        and Compliance Management Professional</option>
+                                    <option value="Autodesk Certified Professional – Revit">Autodesk Certified
+                                        Professional – Revit</option>
+                                    <option value="Certified BIM Specialist">Certified BIM Specialist</option>
+                                    <option value="Certified Digital Construction Professional">Certified Digital
+                                        Construction Professional</option>
+                                    <option value="Certified Fire Inspector">Certified Fire Inspector</option>
+                                    <option value="Certified Fire Protection Specialist">Certified Fire Protection
+                                        Specialist</option>
+                                    <option value="Certified Materials Professional">Certified Materials Professional
+                                    </option>
+                                    <option value="ISO 17025 Certification">ISO 17025 Certification</option>
+                                    <option value="ISTQB Advanced Level Test Analyst">ISTQB Advanced Level Test Analyst
+                                    </option>
+                                    <option value="Certified Construction Supervisor">Certified Construction Supervisor
+                                    </option>
+                                    <option value="Certified Interior Project Management Professional">Certified
+                                        Interior Project Management Professional</option>
+                                    <option value="SAP Certified Application Associate">SAP Certified Application
+                                        Associate</option>
+                                    <option value="SAP Certified Application Professional">SAP Certified Application
+                                        Professional</option>
+                                    <option value="Apple Certified iOS App Developer">Apple Certified iOS App Developer
+                                    </option>
+                                    <option value="iOS App Development with Swift Certification">iOS App Development
+                                        with Swift Certification</option>
+                                    <option value="Certified Mobile Application Developer">Certified Mobile Application
+                                        Developer</option>
+                                    <option value="Certified Data Privacy Solutions Engineer">Certified Data Privacy
+                                        Solutions Engineer</option>
+                                    <option value="Data Governance and Stewardship Professional">Data Governance and
+                                        Stewardship Professional</option>
+                                    <option value="Certified Information Management Professional">Certified Information
+                                        Management Professional</option>
                                     <option value="Other">Other (please specify in message)</option>
                                 </select>
+                                <div id="certificationMulti" class="multi-select"></div>
+
                             </div>
 
                             <div class="mb-4">
@@ -648,13 +1023,130 @@
         const certParam = urlParams.get('cert');
         if (certParam) {
             const certSelect = document.getElementById('certification');
-            // Try to find matching option
+            const tokens = certParam.split(',').map(s => s.trim()).filter(Boolean);
             for (let option of certSelect.options) {
-                if (option.text.includes(certParam) || option.value.includes(certParam)) {
+                if (tokens.some(tok => option.text.includes(tok) || option.value.includes(tok))) {
                     option.selected = true;
-                    break;
                 }
             }
+        }
+
+        const certSelectEl = document.getElementById('certification');
+        const multiRoot = document.getElementById('certificationMulti');
+        function initCertMulti() {
+            multiRoot.innerHTML = '';
+            const field = document.createElement('div');
+            field.className = 'ms-field';
+            const chips = document.createElement('div');
+            chips.className = 'ms-chips';
+            const placeholder = document.createElement('span');
+            placeholder.className = 'ms-placeholder';
+            placeholder.textContent = 'Select a certification (optional)';
+            const caret = document.createElement('span');
+            caret.className = 'ms-caret';
+            field.appendChild(chips);
+            field.appendChild(placeholder);
+            field.appendChild(caret);
+            const dropdown = document.createElement('div');
+            dropdown.className = 'ms-dropdown';
+            const search = document.createElement('input');
+            search.className = 'ms-search';
+            search.type = 'text';
+            search.placeholder = 'Search certifications';
+            const optionsWrap = document.createElement('div');
+            optionsWrap.className = 'ms-options';
+            dropdown.appendChild(search);
+            dropdown.appendChild(optionsWrap);
+            multiRoot.appendChild(field);
+            multiRoot.appendChild(dropdown);
+
+            function syncChips() {
+                chips.innerHTML = '';
+                const sel = Array.from(certSelectEl.selectedOptions);
+                if (sel.length === 0) {
+                    placeholder.style.display = 'inline';
+                } else {
+                    placeholder.style.display = 'none';
+                }
+                sel.forEach(opt => {
+                    const chip = document.createElement('span');
+                    chip.className = 'chip';
+                    chip.textContent = opt.text;
+                    const remove = document.createElement('span');
+                    remove.className = 'remove';
+                    remove.dataset.value = opt.value;
+                    remove.innerHTML = '\u00d7';
+                    chip.appendChild(remove);
+                    chips.appendChild(chip);
+                });
+            }
+
+            function buildList() {
+                optionsWrap.innerHTML = '';
+                Array.from(certSelectEl.options).forEach(opt => {
+                    if (opt.disabled) return;
+                    const row = document.createElement('div');
+                    row.className = 'ms-option' + (opt.selected ? ' selected' : '');
+                    row.dataset.value = opt.value;
+                    row.textContent = opt.text;
+                    optionsWrap.appendChild(row);
+                });
+            }
+
+            buildList();
+            syncChips();
+
+            field.addEventListener('click', () => {
+                multiRoot.classList.toggle('open');
+                search.focus();
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!multiRoot.contains(e.target)) multiRoot.classList.remove('open');
+            });
+
+            optionsWrap.addEventListener('click', (e) => {
+                const row = e.target.closest('.ms-option');
+                if (!row) return;
+                const val = row.dataset.value;
+                const opt = Array.from(certSelectEl.options).find(o => o.value === val);
+                if (!opt) return;
+                opt.selected = !opt.selected;
+                row.classList.toggle('selected', opt.selected);
+                certSelectEl.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+
+            chips.addEventListener('click', (e) => {
+                const btn = e.target.closest('.remove');
+                if (!btn) return;
+                const val = btn.dataset.value;
+                const opt = Array.from(certSelectEl.options).find(o => o.value === val);
+                if (!opt) return;
+                opt.selected = false;
+                const targetRow = optionsWrap.querySelector('[data-value="' + CSS.escape(val) + '"]');
+                if (targetRow) targetRow.classList.remove('selected');
+                certSelectEl.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+
+            certSelectEl.addEventListener('change', syncChips);
+
+            search.addEventListener('input', () => {
+                const q = search.value.trim().toLowerCase();
+                Array.from(optionsWrap.children).forEach(el => {
+                    el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+                });
+            });
+        }
+
+        initCertMulti();
+
+        function resetCertMulti() {
+            multiRoot.classList.remove('open');
+            Array.from(certSelectEl.options).forEach(o => o.selected = false);
+            multiRoot.querySelectorAll('.ms-option.selected').forEach(el => el.classList.remove('selected'));
+            const searchInput = multiRoot.querySelector('.ms-search');
+            if (searchInput) searchInput.value = '';
+            certSelectEl.dispatchEvent(new Event('change', { bubbles: true }));
         }
 
         // Form validation and submission
@@ -717,6 +1209,8 @@
             setTimeout(() => {
                 // Reset form
                 form.reset();
+
+                resetCertMulti();
 
                 // Show success message
                 successMessage.style.display = 'block';
